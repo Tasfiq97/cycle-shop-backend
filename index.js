@@ -4,7 +4,7 @@ let objectId=require("mongodb").ObjectId;
 const app = express()
 const cors=require("cors");
 const { add } = require('nodemon/lib/rules');
-const port = 5000
+const port = process.env.PORT || 4000;
 
 require('dotenv').config()
 
