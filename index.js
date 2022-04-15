@@ -29,9 +29,9 @@ async function run() {
 //get all products 
       app.get("/products",async(req,res)=>{
         const cursor= productsCollection.find({})
-          const result= await cursor.limit(9).toArray();
+          const result= await cursor.toArray();
           res.json(result);
-          console.log(result);
+
       })
 
       app.post("/products",async(req,res)=>{
