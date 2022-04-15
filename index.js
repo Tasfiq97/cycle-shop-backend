@@ -28,7 +28,8 @@ async function run() {
 
 //get all products 
       app.get("/products",async(req,res)=>{
-          const result= await productsCollection.find({}).toArray();
+        const cursor= productsCollection.find({})
+          const result= await cursor.limit(9).toArray();
           res.json(result);
           console.log(result);
       })
